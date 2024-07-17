@@ -1,4 +1,3 @@
-// components/Modal.js
 import React from "react";
 import { FaTimes } from "react-icons/fa";
 
@@ -28,7 +27,6 @@ const Modal = ({
         >
           <FaTimes size={20} />
         </button>
-        {/* <h3 className="text-2xl font-bold "></h3> */}
         <h1
           class="text-base font-semibold text-2xl leading-6 text-gray-900 mb-4"
           id="modal-title"

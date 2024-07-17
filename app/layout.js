@@ -1,6 +1,6 @@
 import { Sora } from "next/font/google";
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css"; // Import CSS for toast notifications
+import "react-toastify/dist/ReactToastify.css"; 
 import "./globals.css";
 
 const sora = Sora({ subsets: ["latin"] });
@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={sora.className}>
         {children}
-        <ToastContainer /> {/* Add ToastContainer here */}
+        <ToastContainer /> 
       </body>
     </html>
   );
