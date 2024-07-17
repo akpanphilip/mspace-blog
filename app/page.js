@@ -39,8 +39,7 @@ function Home() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const auth = useSelector((state) => state.auth); // Access auth state
-
+  const auth = useSelector((state) => state.auth); 
   const handleLogin = () => {
     dispatch(login({ username, password }))
       .unwrap()
@@ -58,7 +57,7 @@ function Home() {
 
   useEffect(() => {
     if (status === "idle") {
-      dispatch(fetchPosts()); // Ensure to fetch posts when the component mounts or when needed
+      dispatch(fetchPosts()); 
     }
   }, [status, dispatch]);
 
@@ -71,8 +70,6 @@ function Home() {
           setTitle("");
           setContent("");
           setIsModalOpen(false);
-          // Optionally refetch posts or rely on state update
-          // dispatch(fetchPosts());
         })
         .catch(() => {
           toast.error("Failed to add post.");
@@ -200,7 +197,6 @@ function Home() {
               </div>
             </div>
 
-            {/* Logo (Center on Desktop) */}
             <a
               className="hidden md:block w-28 order-2 md:order-none mx-auto"
               href="/"
@@ -218,7 +214,6 @@ function Home() {
               />
             </a>
 
-            {/* Links - Secondary (Right) */}
             <div
               className={`w-full md:flex md:w-auto ${
                 isMenuOpen ? "block" : "hidden"

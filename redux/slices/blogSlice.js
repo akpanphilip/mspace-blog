@@ -5,7 +5,7 @@ export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
   const response = await axios.get("https://dummyjson.com/posts");
   return response.data.posts.sort(
     (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
-  ); // Ensure sorting by date
+  ); 
 });
 
 export const addPost = createAsyncThunk(
@@ -17,7 +17,7 @@ export const addPost = createAsyncThunk(
         {
           title: post.title,
           body: post.body,
-          userId: post.userId || 1, // Default userId if not provided
+          userId: post.userId || 1, //default userId
         },
         { headers: { "Content-Type": "application/json" } }
       );
@@ -81,7 +81,7 @@ export const addComment = createAsyncThunk(
         {
           body: comment.body,
           postId: postId,
-          userId: comment.userId || 1, // Default userId if not provided
+          userId: comment.userId || 1, // Default userId 
         },
         { headers: { "Content-Type": "application/json" } }
       );
@@ -125,7 +125,7 @@ const blogSlice = createSlice({
         state.error = action.error.message;
       })
       .addCase(addPost.fulfilled, (state, action) => {
-        state.posts = [action.payload, ...state.posts]; // Add new post to the beginning of the array
+        state.posts = [action.payload, ...state.posts]; 
       })
       .addCase(updatePost.fulfilled, (state, action) => {
         const index = state.posts.findIndex(
