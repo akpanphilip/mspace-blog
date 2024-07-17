@@ -1,7 +1,9 @@
-import { Inter } from "next/font/google";
+import { Sora } from "next/font/google";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // Import CSS for toast notifications
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const sora = Sora({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +13,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={sora.className}>
+        {children}
+        <ToastContainer /> {/* Add ToastContainer here */}
+      </body>
     </html>
   );
 }
